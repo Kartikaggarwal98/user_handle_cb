@@ -1,4 +1,5 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse, HttpResponseRedirect
+from django.contrib.auth import authenticate, login, logout
 
 from models import UserProfile
 from forms import UserProfileForm, UserForm
@@ -50,7 +51,7 @@ def user_login(request):
 		user= authenticate(username=username, password=password)
 
 		if user:
-			if not user.is_active():
+			if user.is_active:
 				login(request, user)
 				return HttpResponseRedirect('/main/')
 			else:
