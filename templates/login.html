@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+</head>
+<body>
+ WELCOME TO LOGIN PAGE!<br>
+ <form id="login_form" action="/main/login/" method="POST">
+ {% csrf_token %}
+
+ Username: <input type="text" name="username" value="" size="50" /><br>
+ Password: <input type="password" name="password" value="" size="50" /><br>
+ <br>
+ <input type="submit" name="login" value="Login/">
+</form>
+</body>
+</html>
