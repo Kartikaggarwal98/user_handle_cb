@@ -4,8 +4,8 @@ from models import UserProfile
 from forms import UserProfileForm, UserForm
 
 def index(request):
-	return HttpResponse("HEllo")
-
+	#return HttpResponse("HEllo")
+	return render(request,'index.html')
 def register(request):
 
     registered = False
