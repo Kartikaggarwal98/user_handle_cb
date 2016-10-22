@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+</head>
+<body>
+
+<h1>Registration Form</h1>
+
+{% if registered %}
+    Thank you for registering!<br>
+    <a href="/main/">Home</a>
+{% else %}
+    Fill the form below:
+
+    <form id="user_registration_form" action="/main/register/" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+
+    <input type="submit" name="submit" value="Register"/>
+
+    </form>
+{% endif %}
+
+
+</body>
+</html>

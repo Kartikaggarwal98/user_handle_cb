@@ -1,9 +1,7 @@
 """
 Django settings for users_app project.
-
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
-
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
@@ -17,8 +15,10 @@ SETTINGS_DIR = os.path.dirname(__file__)
 PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
 PROJECT_PATH = os.path.abspath(PROJECT_PATH)
 
-TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 STATIC_PATH = os.path.join(PROJECT_PATH, 'static')
+
+print TEMPLATE_PATH
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
@@ -95,6 +95,11 @@ STATICFILES_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     STATIC_PATH,
 )
+
+TEMPLATE_DIRS = (
+    TEMPLATE_PATH,
+)
+
 
 # List of finder classes that know how to find static files in
 # various locations.
